@@ -29,12 +29,12 @@ if ($b >= $c) {
 
 if ($b <= $c) {
     // output the appropriate result
-    echo "$b is greater than or equal to $c\n";
+    echo "$b is less than or equal to $c\n";
 }
 
 if ($b == $c) {
     // output the appropriate result
-    echo "$b is equal to $c\n";
+    echo "$b is the same value to $c\n";
 }
 
 if ($b === $c) {

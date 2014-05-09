@@ -14,19 +14,19 @@ $c = '10';
 if ($a < $b) {
     // output the appropriate result
     echo "$a is less than $b\n";
-}
+} //end of if
 else {
     echo "This is the else clause\n";
-}
+} // end of else
     
 
 if ($b > $a) {
     // output the appropriate result
     echo "$b is greater than $a\n";
-}
+} //end of if
 else {
     echo "This is the else clause\n";
-}
+} // end of else
 
 
 // Shorten the next 2 statements into an if/else

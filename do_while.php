@@ -20,15 +20,15 @@ Create a do-while loop that starts at 2, and displays the result $a * $a on each
 */
 
 //constants
-define ('MAX', 100);
+define ('MAX', -10);
 
 //variables
-$test = 0;
+$test = 100;
 
 //main
 do {
 	echo "\$test is $test\n";
-	$test = $test + 2; //increment by 2
-} while ($test <= MAX);
+	$test = $test - 5; //count backwards by 5
+} while ($test >= MAX);
 
 

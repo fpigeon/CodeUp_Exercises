@@ -1,55 +1,68 @@
 <?php
 /*
-CodeUp Day 3
+CodeUp Day 4
 Dev: Frank Pigeon
 Date: May 8, 2014
 */
 
 //variables
-
-$a = 5;
-$b = 10;
+$a = 10;
+$b = 100;
 $c = '10';
 
-
+// Add an else clause to the next two statments
 if ($a < $b) {
     // output the appropriate result
     echo "$a is less than $b\n";
 }
+else {
+    echo "This is the else clause\n";
+}
+    
 
 if ($b > $a) {
     // output the appropriate result
     echo "$b is greater than $a\n";
 }
+else {
+    echo "This is the else clause\n";
+}
 
+
+// Shorten the next 2 statements into an if/else
 if ($b >= $c) {
     // output the appropriate result
     echo "$b is greater than or equal to $c\n";
-}
+} //end if
 
-if ($b <= $c) {
+else {
     // output the appropriate result
     echo "$b is less than or equal to $c\n";
-}
+} //end else
 
-if ($b == $c) {
-    // output the appropriate result
-    echo "$b is the same value to $c\n";
-}
 
+
+// combine the next 4 conditionals into 
+// one if/else/elseif block that checks in order for:
+// identical, equal, not identical, not equal
 if ($b === $c) {
     // output the appropriate result
-    echo "$b is identical to $c\n"; //same type
-}
+    echo "$b is identical to $c\n";
+} //end of identical
 
-// output the appropriate result
-if ($b != $c) {
-    echo "$b is not equal to $c\n";
-}
+elseif ($b == $c) {
+    // output the appropriate result
+    echo "$b is equal to $c\n";
+}//end of equal
 
-// output the appropriate result
-if ($b !== $c) {
+elseif ($b !== $c) {
+    // output the appropriate result
     echo "$b is not identical to $c\n";
-}
+} //end of not identical
+
+else {
+    // output the appropriate result
+    echo "$b is not equal to $c\n";
+}//end of not equal
 
 ?>

@@ -6,9 +6,12 @@ Date: May 8, 2014
 */
 
 //variables
-$a = 10;
-$b = 100;
+$a = 1;
+$b = 10;
 $c = '10';
+
+//display output of variables
+echo ("\$a is $a\n\$b is $b\n\$c is $c\n\n\n");
 
 // Add an else clause to the next two statments
 if ($a < $b) {
@@ -52,7 +55,7 @@ if ($b === $c) {
 
 elseif ($b == $c) {
     // output the appropriate result
-    echo "$b is equal to $c\n";
+    echo "$b is equal (thanks PHP) to $c\n";
 }//end of equal
 
 elseif ($b !== $c) {

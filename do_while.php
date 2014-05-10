@@ -30,5 +30,3 @@ do {
 	echo "\$test is $test\n";
 	$test = $test * $test; //multiply by itself
 } while ($test <= MAX);
-
-

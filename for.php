@@ -15,11 +15,17 @@ Description:
 
 //prompt user for starting, ending number, and incrementor
 echo "Please enter a starting number: ";
-$start_num = (int)fgets(STDIN);
+$start_num = trim(fgets(STDIN));
 echo "Please enter an ending number: ";
-$end_num = (int)fgets(STDIN);
+$end_num = trim(fgets(STDIN));
 echo "Please enter an incrementor: ";
-$incrementor = (int)fgets(STDIN);
+$incrementor = trim(fgets(STDIN));
+
+//only allow numbers
+if (!is_numeric($start_num) || !is_numeric($end_num) ) {
+	echo "You must enter numeric values\n";
+	exit(1);
+}
 
 //default incrementor = 1 if no input
 if ($incrementor == "\n"){

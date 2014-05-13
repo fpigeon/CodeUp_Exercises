@@ -18,16 +18,16 @@ echo "Please enter a starting number: ";
 $start_num = (int)fgets(STDIN);
 echo "Please enter an ending number: ";
 $end_num = (int)fgets(STDIN);
+echo "Please enter an incrementor: ";
+$incrementor = (int)fgets(STDIN);
 
 //for debugging; remove later
 echo ("\$start_num is $start_num and \$end_num is $end_num\n");
+echo ("\$incrementor is $incrementor\n");
 
 //pass on value to index
 $index = $start_num;
-
 //for loop
-for ($index; $index <= $end_num; $index++) {
+for ($index; $index <= $end_num; $index+=$incrementor) {
 	echo ($index . PHP_EOL);
 } //end of for loop
-
-

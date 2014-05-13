@@ -13,7 +13,7 @@ Description:
 4. Make sure you are only allowing users to pass in numbers. Give an error message is both passed arguments are not numeric. See php.net/is_numeric.
 */
 
-//prompt user for starting and ending number
+//prompt user for starting, ending number, and incrementor
 echo "Please enter a starting number: ";
 $start_num = (int)fgets(STDIN);
 echo "Please enter an ending number: ";
@@ -31,9 +31,9 @@ echo ("\$start_num is $start_num and \$end_num is $end_num\n");
 echo ("\$incrementor is $incrementor\n");
 
 //pass on value to index
-$index = $start_num;
+//$index = $start_num;
 
 //for loop
-for ($index; $index <= $end_num; $index+=$incrementor) {
+for ($index = $start_num; $index <= $end_num; $index+=$incrementor) {
 	echo ($index . PHP_EOL);
 } //end of for loop

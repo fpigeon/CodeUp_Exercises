@@ -26,10 +26,10 @@ $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, 
 $index = 0;
 
 foreach ($things as $thing){
-	if (is_int($thing) ){
-		echo ('Array index ' . $index . ' value is integer');
+	if (is_scalar($thing) ){
+		echo ('Array index ' . $index . ' value is scalar');
 	} //end of integer
-	elseif (is_float($thing)) {
+	/*elseif (is_float($thing)) {
 		echo ('Array index ' . $index . ' value is float');
 	}//end of float
 	elseif (is_bool($thing)) {
@@ -43,7 +43,7 @@ foreach ($things as $thing){
 	}//end of null
 	elseif (is_string($thing)){
 		echo ('Array index ' . $index . ' value is a string');
-	}//end of string
+	}//end of string*/
 
 
 

@@ -28,27 +28,9 @@ for ($index = MIN; $index <= MAX; $index++){
 	} //end of Fizz
 	elseif ($index == $divBy5) {
 		echo MultFive . PHP_EOL;
-	}
+	}//end of Buzz
 	else{
 		echo ($index .  PHP_EOL);	
 	}//no flags
-
-	/*if ( ($index % 3 == 0) && !($count % 15 == 0) ){
-		echo multThree . PHP_EOL;
-		//$index++; //increment
-	} //Fizz
-	elseif ( ($index % 5 == 0) && !($count % 15 == 0) ) {
-		echo MultFive . PHP_EOL;
-		//$index++;
-	}//end of buzz
-	elseif ($count % 15 == 0) {
-		echo MultFifteen . PHP_EOL;
-		//$index++;
-	}//end of FizzBuzz
-	else{
-		echo ($index .  PHP_EOL);	
-	}//no flags
-
-	$count++; //flag for FizzBuzz*/
 	
-}//end of for
+}//end of for loop

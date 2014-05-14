@@ -36,6 +36,17 @@ $fruits = [
         ['color' => 'green']
 ];//end of fruits array
 
+//as a for loop
+for ($i = 0; $i < count($fruits); $i++) {
+    $fruit = $fruits[$i];
+    echo "The fruit's name is $fruit\n";
+}//end of for loop
+
+echo '' . PHP_EOL;
+echo 'End of For Loop' . PHP_EOL;
+echo '' . PHP_EOL;
+
+
 //loop through all fruits
 foreach ($fruits as $key => $fruit) {
 	echo 'The fruit\'s name is ' . $key . PHP_EOL;

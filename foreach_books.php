@@ -37,14 +37,15 @@ $books = array(
 
 //loop
 foreach ($books as $key => $book) {
-	//echo "The book's title is " . $key . " and contains " . print_r($book) . PHP_EOL;
-	echo 'The book\'s title is ' . $key . PHP_EOL;
+	//books only after 1950
+	if($book['published'] > 1950){
+		echo 'The book\'s title is ' . $key . PHP_EOL;
 	
-	foreach ($book as $key2 => $bookInfo) {
-		//print_r($bookInfo) . PHP_EOL;
-		echo "$key2 $bookInfo\n";
-	}//end of $book foreach
-	echo '' . PHP_EOL;
-	
+		foreach ($book as $key2 => $bookInfo) {
+			echo "$key2 $bookInfo\n";
+		}//end of $book foreach
+		//new line after book
+		echo '' . PHP_EOL;
+	} // end of books after 1950
+		
 }//end of $books foreach
-

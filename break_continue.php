@@ -11,10 +11,10 @@ Create a file named break_continue.php in your exercises directory. Commit and p
 2. Create another for loop that counts from 1 to 100, but stops after 10 using break.
 */
 
-for ($ii = 0; $ii <=100; $ii++) {
-	if ($ii % 2 == 0){ //loop over if index is even
-		echo $ii . PHP_EOL;
-		continue; //start at the beggining of the loop
+for ($ii = 1; $ii <=100; $ii++) {
+	echo $ii . PHP_EOL;
+	if ($ii == 10){ //stop at 10
+		break; //break out of the loop
 	} //end of even
 	
 } // end of for loop

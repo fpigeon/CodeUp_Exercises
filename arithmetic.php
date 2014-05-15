@@ -24,7 +24,8 @@ function error ($a, $b, $error_code){
 		return  "$a and/or $b are not numbers\n";
 	}//end of error 1
 	else {
-		return "$a is not divisble by zero\n";
+		//return "$a is not divisble by zero\n";
+		return FALSE;
 	} // end error 2
 } // end of error code
 

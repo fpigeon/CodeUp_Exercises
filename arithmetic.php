@@ -1,8 +1,8 @@
 <?php
 /*
-CodeUp Day 6
+CodeUp Day 8
 Dev: Frank Pigeon
-Date: May 13 2014
+Date: May 15 2014
 Description:
 1. Fill in the // Add code here blocks to make each function echo the proper result.
 2. Add code after functions that calls each function with real numbers.

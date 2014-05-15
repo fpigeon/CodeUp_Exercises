@@ -14,25 +14,27 @@ Step2
 7. Validate divide by 0 errors, display error if attempts to divide by 0 are made.
 8. Make the error messages show the values of the arguments.
 9. Refactor the error messages into their own function, have the other functions use it for error messaging.
-
-
+Step 3
+10. Refactor each function to return the result, removing the echo.
+11. Validate divide by 0 errors, return FALSE if divide by 0 is attempted.
 */
+
 function error ($a, $b, $error_code){
 	if($error_code === 1){
-		echo "$a and $b are not numbers\n";
+		return  "$a and/or $b are not numbers\n";
 	}//end of error 1
 	else {
-		echo "$a is not divisble by zero\n";
+		return "$a is not divisble by zero\n";
 	} // end error 2
 } // end of error code
 
 function add($a, $b) {
 	//error check
 	if(is_numeric($a) && is_numeric($b) ){
-		echo $a + $b . PHP_EOL;
+		return $a + $b . PHP_EOL;
 	}//end of error check
 	else{
-		error($a, $b, 1);
+		return error($a, $b, 1);
 	} //default error message
     
 } // end of add
@@ -40,20 +42,20 @@ function add($a, $b) {
 function subtract($a, $b) {
 //error check
 	if(is_numeric($a) && is_numeric($b) ){
-		echo $a - $b . PHP_EOL;
+		return $a - $b . PHP_EOL;
 	}//end of error check
 	else{
-		error($a, $b, 1);
+		return error($a, $b, 1);
 	} //default error message} 
 } // end of subtract
 
 function multiply($a, $b) {
  //error check
 	if(is_numeric($a) && is_numeric($b) ){
-		echo $a * $b . PHP_EOL;
+		return $a * $b . PHP_EOL;
 	}//end of error check
 	else{
-		error($a, $b, 1);
+		return error($a, $b, 1);
 	} //default error message
 } //end of multiply
 
@@ -61,33 +63,31 @@ function divide($a, $b) {
     //error check
 	if(is_numeric($a) && is_numeric($b) ){
 		if ($b === 0){
-			error($a, $b, 999);
+			return error($a, $b, 999);
 		} //check for div by 0
 		else {
-			echo $a / $b . PHP_EOL;
+			return $a / $b . PHP_EOL;
 		} //ok to divide
 		
 	}//end of error check
 	else{
-		error($a, $b, 1);
+		return error($a, $b, 1);
 	} //default error message
 } // end of divide
 
 function mod($a, $b) {
     //error check
 	if(is_numeric($a) && is_numeric($b) ){
-		echo $a % $b . PHP_EOL;
+		return $a % $b . PHP_EOL;
 	}//end of error check
 	else{
-		error($a, $b, 1);
+		return error($a, $b, 1);
 	} //default error message
 } // end of mod
 
-
-
-add('banana', 'banana');
-subtract('banana', 2);
-multiply(10, 'banana');
-divide(10, 'banana');
-mod(true, 2);
-
+//function calls
+echo add(10, 2);
+echo subtract(10, 2);
+echo multiply(10, 2);
+echo divide(10, 0);
+echo mod(10, 2);

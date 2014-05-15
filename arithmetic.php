@@ -9,30 +9,68 @@ Description:
 3. Verify the output of each test.
 4. Add a function modulus that finds the modulus of 2 numbers.
 5. Add test code and verify the output of modulus.
+Step2
+6. Validate all the arguments, and display an error if the input is not numeric.
+7. Validate divide by 0 errors, display error if attempts to divide by 0 are made.
+8. Make the error messages show the values of the arguments.
+9. Refactor the error messages into their own function, have the other functions use it for error messaging.
+
+
 */
 
 function add($a, $b) {
-    echo $a + $b . PHP_EOL;
+	//error check
+	if(is_numeric($a) && is_numeric($b) ){
+		echo $a + $b . PHP_EOL;
+	}//end of error check
+	else{
+		echo 'Please enter numbers' . PHP_EOL;
+	} //default error message
+    
 } // end of add
 
 function subtract($a, $b) {
-	echo $a - $b . PHP_EOL;    
+//error check
+	if(is_numeric($a) && is_numeric($b) ){
+		echo $a - $b . PHP_EOL;
+	}//end of error check
+	else{
+		echo 'Please enter numbers' . PHP_EOL;
+	} //default error message} 
 } // end of subtract
 
 function multiply($a, $b) {
-    echo $a * $b . PHP_EOL;
+ //error check
+	if(is_numeric($a) && is_numeric($b) ){
+		echo $a * $b . PHP_EOL;
+	}//end of error check
+	else{
+		echo 'Please enter numbers' . PHP_EOL;
+	} //default error message
 } //end of multiply
 
 function divide($a, $b) {
-    echo $a / $b . PHP_EOL;
+    //error check
+	if(is_numeric($a) && is_numeric($b) ){
+		echo $a / $b . PHP_EOL;
+	}//end of error check
+	else{
+		echo 'Please enter numbers' . PHP_EOL;
+	} //default error message
 } // end of divide
 
 function mod($a, $b) {
-    echo $a % $b . PHP_EOL;
-} // end of divide
+    //error check
+	if(is_numeric($a) && is_numeric($b) ){
+		echo $a % $b . PHP_EOL;
+	}//end of error check
+	else{
+		echo 'Please enter numbers' . PHP_EOL;
+	} //default error message
+} // end of mod
 
-add(10, 2);
-subtract(10, 2);
-multiply(10, 2);
-divide(10, 2);
-mod(10, 2);
+add('banana', 2);
+subtract('banana', 2);
+multiply(10, 'banana');
+divide(10, false);
+mod(true, 2);

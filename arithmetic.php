@@ -27,9 +27,9 @@ function divide($a, $b) {
     echo $a / $b . PHP_EOL;
 } // end of divide
 
-function mod($a, $b) {
-    echo $a % $b . PHP_EOL;
-} // end of divide
+// function mod($a, $b) {
+//     echo $a % $b . PHP_EOL;
+// } // end of divide
 
 add(10, 2);
 subtract(10, 2);

@@ -52,7 +52,13 @@ function multiply($a, $b) {
 function divide($a, $b) {
     //error check
 	if(is_numeric($a) && is_numeric($b) ){
-		echo $a / $b . PHP_EOL;
+		if ($b === 0){
+			echo 'You cannot divide by zero' . PHP_EOL;
+		} //check for div by 0
+		else {
+			echo $a / $b . PHP_EOL;
+		} //ok to divide
+		
 	}//end of error check
 	else{
 		echo 'Please enter numbers' . PHP_EOL;
@@ -72,5 +78,5 @@ function mod($a, $b) {
 add('banana', 2);
 subtract('banana', 2);
 multiply(10, 'banana');
-divide(10, false);
+divide(10, 0);
 mod(true, 2);

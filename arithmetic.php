@@ -17,6 +17,14 @@ Step2
 
 
 */
+function error ($a, $b, $error_code){
+	if($error_code === 1){
+		echo "$a and $b are not numbers\n";
+	}//end of error 1
+	else {
+		echo "$a is not divisble by zero\n";
+	} // end error 2
+} // end of error code
 
 function add($a, $b) {
 	//error check
@@ -24,7 +32,7 @@ function add($a, $b) {
 		echo $a + $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
+		error($a, $b, 1);
 	} //default error message
     
 } // end of add
@@ -35,7 +43,7 @@ function subtract($a, $b) {
 		echo $a - $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
+		error($a, $b, 1);
 	} //default error message} 
 } // end of subtract
 
@@ -45,7 +53,7 @@ function multiply($a, $b) {
 		echo $a * $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
+		error($a, $b, 1);
 	} //default error message
 } //end of multiply
 
@@ -53,7 +61,7 @@ function divide($a, $b) {
     //error check
 	if(is_numeric($a) && is_numeric($b) ){
 		if ($b === 0){
-			echo 'You cannot divide by zero' . PHP_EOL;
+			error($a, $b, 999);
 		} //check for div by 0
 		else {
 			echo $a / $b . PHP_EOL;
@@ -61,7 +69,7 @@ function divide($a, $b) {
 		
 	}//end of error check
 	else{
-		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
+		error($a, $b, 1);
 	} //default error message
 } // end of divide
 
@@ -71,12 +79,15 @@ function mod($a, $b) {
 		echo $a % $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
+		error($a, $b, 1);
 	} //default error message
 } // end of mod
 
-add('banana', 2);
+
+
+add('banana', 'banana');
 subtract('banana', 2);
 multiply(10, 'banana');
-divide(10, 0);
+divide(10, 'banana');
 mod(true, 2);
+

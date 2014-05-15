@@ -24,7 +24,7 @@ function add($a, $b) {
 		echo $a + $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo 'Please enter numbers' . PHP_EOL;
+		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
 	} //default error message
     
 } // end of add
@@ -35,7 +35,7 @@ function subtract($a, $b) {
 		echo $a - $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo 'Please enter numbers' . PHP_EOL;
+		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
 	} //default error message} 
 } // end of subtract
 
@@ -45,7 +45,7 @@ function multiply($a, $b) {
 		echo $a * $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo 'Please enter numbers' . PHP_EOL;
+		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
 	} //default error message
 } //end of multiply
 
@@ -61,7 +61,7 @@ function divide($a, $b) {
 		
 	}//end of error check
 	else{
-		echo 'Please enter numbers' . PHP_EOL;
+		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
 	} //default error message
 } // end of divide
 
@@ -71,7 +71,7 @@ function mod($a, $b) {
 		echo $a % $b . PHP_EOL;
 	}//end of error check
 	else{
-		echo 'Please enter numbers' . PHP_EOL;
+		echo $a . ' and ' . $b . ' are not numbers' . PHP_EOL;
 	} //default error message
 } // end of mod
 

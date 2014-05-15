@@ -27,11 +27,12 @@ function divide($a, $b) {
     echo $a / $b . PHP_EOL;
 } // end of divide
 
-// function mod($a, $b) {
-//     echo $a % $b . PHP_EOL;
-// } // end of divide
+function mod($a, $b) {
+    echo $a % $b . PHP_EOL;
+} // end of divide
 
 add(10, 2);
 subtract(10, 2);
 multiply(10, 2);
 divide(10, 2);
+mod(10, 2);

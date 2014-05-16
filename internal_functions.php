@@ -19,15 +19,16 @@ $array = array(1,2,3);
 
 function test($var){
 	if (isset($var) ){
-		echo "$var is SET\n";
+		echo "variable is SET\n";
 	}//end of set
 
-	if empty($var){
-		echo "$var is EMPTY\n";
+	if (empty($var) ){
+		echo "variable is EMPTY\n";
 	}//end of empty
 }//end of test
 
-// Create a function that checks if a variable is set or empty, and display "$variable_name is SET|EMPTY"
+test($nothing);
+
 
 // TEST: If var $nothing is set, display '$nothing is SET'
 

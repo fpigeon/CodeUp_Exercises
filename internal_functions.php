@@ -27,10 +27,9 @@ function test($var){
 	}//end of empty
 }//end of test
 
-test($something);
-
-
-// TEST: If var $something is set, display '$something is SET'
+//test($something);
+$cereal = serialize($array);
+echo $cereal . PHP_EOL;
 
 // Serialize the array $array, and output the results
 

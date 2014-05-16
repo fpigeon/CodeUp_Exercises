@@ -27,12 +27,8 @@ function test($var){
 	}//end of empty
 }//end of test
 
-test($nothing);
+test($something);
 
-
-// TEST: If var $nothing is set, display '$nothing is SET'
-
-// TEST: If var $nothing is empty, display '$nothing is EMPTY'
 
 // TEST: If var $something is set, display '$something is SET'
 

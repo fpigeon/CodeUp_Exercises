@@ -31,8 +31,8 @@ function test($var){
 $cereal = serialize($array);
 echo $cereal . PHP_EOL;
 
-// Serialize the array $array, and output the results
-
+$un_cereal = unserialize($cereal);
+print_r ($un_cereal);
 // Unserialize the array $array, and output the results
 
 

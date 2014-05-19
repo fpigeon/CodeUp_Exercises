@@ -27,9 +27,9 @@ function array_finder($search, $array){
 function array_common_count($array1, $array2){
 	$match_count = 0; //stores match counters
 	
-	foreach ($array1 as $key => $value) {
+	foreach ($array1 as $value) {
 		//if(array_search($array1[0], $array1) === array_search($array2[0], $array2))
-		if (array_finder($value, $array1) === array_finder($value, $array2)) {
+		if (array_finder($value, $array2)) {
 			$match_count++; //increment the count by 1
 		}	//end of founf match
 	} //end of loop

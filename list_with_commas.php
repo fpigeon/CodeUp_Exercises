@@ -9,7 +9,7 @@ Date: May 20 ,2014
 function humanized_list($string, $alpha = FALSE) {
 	$exploded = explode(', ', $string);
 	//sort alphabetical
-	if ($alpha == TRUE){
+	if ($alpha === TRUE){
 		sort($exploded);	
 	} // end of sort alphabetical	
 	$last_one = array_pop($exploded);
@@ -23,7 +23,7 @@ function humanized_list($string, $alpha = FALSE) {
 $physicists_string = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
 
 // Humanize that list
-$famous_fake_physicists = humanized_list($physicists_string);
+$famous_fake_physicists = humanized_list($physicists_string, TRUE);
 
 //explode the string
 //$famous_fake_physicists = explode(', ', $physicists_string);

@@ -6,10 +6,12 @@ Date: May 20 ,2014
 */
 
 // Converts array into list n1, n2, ..., and n3
-function humanized_list($string) {
+function humanized_list($string, $alpha = FALSE) {
 	$exploded = explode(', ', $string);
 	//sort alphabetical
-	sort($exploded);
+	if ($alpha == TRUE){
+		sort($exploded);	
+	} // end of sort alphabetical	
 	$last_one = array_pop($exploded);
 	$last_one = 'and ' . $last_one;
 	array_push($exploded, $last_one);

@@ -8,6 +8,8 @@ Date: May 20 ,2014
 // Converts array into list n1, n2, ..., and n3
 function humanized_list($string) {
 	$exploded = explode(', ', $string);
+	//sort alphabetical
+	sort($exploded);
 	$last_one = array_pop($exploded);
 	$last_one = 'and ' . $last_one;
 	array_push($exploded, $last_one);

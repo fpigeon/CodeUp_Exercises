@@ -68,12 +68,16 @@ $parks = [
     'description' => "This park on the Big Island protects the famous Kīlauea and Mauna Loa volcanoes, two of the world\'s most active geological features.
         Diverse ecosystems range from tropical forests at sea level to barren lava beds at more than 13,000 feet (4,000 m)." ]
 ];
-
+$stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
+                       VALUES (:name, :location, :date_established, :area_in_acres, :description)');
 foreach ($parks as $park) {
-    $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES ('{$park['name']}', '{$park['location']}',
-     '{$park['date_established']}', '{$park['area_in_acres']}', '{$park['description']}' )";
+    $stmt->bindValue(':name', $park['name'], PDO::PARAM_STR);
+    $stmt->bindValue(':location', $park['location'], PDO::PARAM_STR);
+    $stmt->bindValue(':date_established', $park['date_established'], PDO::PARAM_STR);
+    $stmt->bindValue(':area_in_acres', $park['area_in_acres'], PDO::PARAM_INT);
+    $stmt->bindValue(':description', $park['description'], PDO::PARAM_STR);    
 
-    $dbc->exec($query);
+    $stmt->execute();
 
     echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
 } //end of foreach

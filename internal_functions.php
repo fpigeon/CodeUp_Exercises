@@ -17,6 +17,8 @@ $nothing = NULL;
 $something = '';
 $array = array(1,2,3);
 
+unset($nothing);
+
 function test($var){
 	if (isset($var) ){
 		echo "variable is SET\n";
@@ -27,12 +29,12 @@ function test($var){
 	}//end of empty
 }//end of test
 
-//test($something);
-$cereal = serialize($array);
-echo $cereal . PHP_EOL;
+test($nothing);
+// $cereal = serialize($array);
+// echo $cereal . PHP_EOL;
 
-$un_cereal = unserialize($cereal);
-print_r ($un_cereal);
+// $un_cereal = unserialize($cereal);
+// print_r ($un_cereal);
 // Unserialize the array $array, and output the results
 
 

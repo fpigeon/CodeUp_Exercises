@@ -26,7 +26,8 @@ define ('MAX', 1000000);
 $test = 2;
 
 //main
-do {
+do
+{
 	echo "\$test is $test\n";
 	$test = $test * $test; //multiply by itself
 } while ($test <= MAX);

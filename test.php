@@ -12,6 +12,7 @@ $c = '10';
 
 //output
 echo "\$a is $a\n\$b is $b\n\$c is $c\n";
-if ($a < $b) {
-	echo 'Frank is the coolest!' . PHP_EOL;
+if ($a < $b)
+{
+    echo 'CodeUp is the coolest!' . PHP_EOL;
 }

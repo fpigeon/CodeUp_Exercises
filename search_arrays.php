@@ -11,29 +11,34 @@ Create a function to compare 2 arrays that returns the number of values in commo
 Use the 2 example arrays and make sure your solution uses array_search().
  */
 
-function array_finder($search, $array){
-	if(array_search($search, $array) !== FALSE){
-		$found = TRUE;
-	} //end of found
-	else {
-		$found = FALSE;
-	} //not found
-	
-	return $found;
+//searches an array for a value and returns TRUE or FALSE
+function array_finder($search_value, $array)
+{
+    if (array_search($search_value, $array) !== FALSE)
+    {
+        $is_found = TRUE;
+    } //end of found
+    else
+    {
+        $is_found = FALSE;
+    } //not found
 
+    return $is_found;
 }//end of array_finder
 
 
-function array_common_count($array1, $array2){
-	$match_count = 0; //stores match counters
-	
-	foreach ($array1 as $value) {
-		//if(array_search($array1[0], $array1) === array_search($array2[0], $array2))
-		if (array_finder($value, $array2)) {
-			$match_count++; //increment the count by 1
-		}	//end of founf match
-	} //end of loop
-		return $match_count;
+function array_common_count($array1, $array2)
+{
+    $match_count = 0; //stores match counters
+
+    foreach ($array1 as $value)
+    {
+        if (array_finder($value, $array2))
+        {
+            $match_count++; //increment the count by 1
+        }   //end of found match
+    } //end of loop
+        return $match_count;
 } //end of array_compare
 
 // first names

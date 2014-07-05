@@ -11,11 +11,9 @@ Fruit.php for GitHub
    as a For and a forEach Loop
 2) Modfy the fruit array so that you have fruit_name => color;
 apple red , banana yellow
-print out using a forEach loop 
-
+print out using a forEach loop
      Apples are Red
      Bananas are Yellow
-
 */
 
 //variables
@@ -38,16 +36,12 @@ $fruits = [
 ];//end of fruits array
 
 //loop through all fruits
-foreach ($fruits as $key => $fruit)
+foreach ($fruits as $fruitName => $fruit)
 {
-	echo 'The fruit\'s name is ' . $key . PHP_EOL;
-
-	foreach ($fruit as $key => $fruitInfo)
+    echo ucfirst($fruitName);
+	foreach ($fruit as $color => $fruitInfo)
     {
-		echo "and the $key is $fruitInfo\n";
-	}//end of $fruit foreach
-	
-    //new line after book
-	echo '' . PHP_EOL;
-	
+        echo 's are ' . $fruitInfo . PHP_EOL;
+	}//end of $fruitName foreach
+
 }//end of $fruits foreach

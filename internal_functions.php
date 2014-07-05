@@ -19,23 +19,17 @@ $array = array(1,2,3);
 
 unset($nothing);
 
-function test($var){
-	if (isset($var) ){
-		echo "variable is SET\n";
-	}//end of set
+function test($var)
+{
+    if (isset($var))
+    {
+        echo "variable is SET\n";
+    }//end of set
 
-	if (empty($var) ){
-		echo "variable is EMPTY\n";
-	}//end of empty
-}//end of test
+    if (empty($var))
+    {
+        echo "variable is EMPTY\n";
+    }//end of empty
+}//end of function test
 
-test($nothing);
-// $cereal = serialize($array);
-// echo $cereal . PHP_EOL;
-
-// $un_cereal = unserialize($cereal);
-// print_r ($un_cereal);
-// Unserialize the array $array, and output the results
-
-
-
+test($array);

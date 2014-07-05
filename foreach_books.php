@@ -5,9 +5,7 @@ Dev: Frank Pigeon
 Date: May 13 2014
 Description:
 1. Create a file named foreach_books.php in you exercises directory. Commit each step and push to GitHub.
-
 2. Construct a loop that iterates through each book and then each book's keys and values. Have it output the book's title, then list the key value pairs for the data about each book.
-
 3. Update your loop to only show books that were written after 1950.
 */
 
@@ -36,16 +34,16 @@ $books = array(
 );
 
 //loop
-foreach ($books as $key => $book) {
+foreach ($books as $title => $book)
+{
 	//books only after 1950
-	if($book['published'] > 1950){
-		echo 'The book\'s title is ' . $key . PHP_EOL;
-	
-		foreach ($book as $key2 => $bookInfo) {
-			echo "$key2: $bookInfo\n";
+	if ($book['published'] > 1950)
+    {
+		echo 'The book\'s title is ' . $title . PHP_EOL;
+		foreach ($book as $bookField => $bookData)
+        {
+			echo "$bookField: $bookData\n";
 		}//end of $book foreach
-		//new line after book
-		echo PHP_EOL;
+        echo PHP_EOL;
 	} // end of books after 1950
-		
 }//end of $books foreach

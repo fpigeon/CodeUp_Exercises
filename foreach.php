@@ -29,7 +29,7 @@ foreach ($things as $thing)
         echo "Array";
     }//internal array
 
-    elseif (is_scalar($thing))
+    else (is_scalar($thing))
     {
         echo ($thing);
     } //scalar

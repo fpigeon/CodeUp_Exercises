@@ -37,7 +37,7 @@ function add($a, $b)
     //error check
     if (is_numeric($a) && is_numeric($b) )
     {
-        return $a + $b . PHP_EOL;
+        return ($a + $b) . PHP_EOL;
     }//end of error check
     else
     {
@@ -51,7 +51,7 @@ function subtract($a, $b)
     //error check
     if (is_numeric($a) && is_numeric($b) )
     {
-        return $a - $b . PHP_EOL;
+        return ($a - $b) . PHP_EOL;
     }//end of error check
     else
     {
@@ -64,7 +64,7 @@ function multiply($a, $b)
     //error check
     if (is_numeric($a) && is_numeric($b) )
     {
-        return $a * $b . PHP_EOL;
+        return ($a * $b) . PHP_EOL;
     }//end of error check
     else
     {
@@ -82,7 +82,7 @@ function divide($a, $b)
         } //check for div by 0
         else
         {
-            return $a / $b . PHP_EOL;
+            return ($a / $b) . PHP_EOL;
         } //ok to divide
 
     }//end of error check
@@ -97,7 +97,7 @@ function mod($a, $b)
     //error check
     if (is_numeric($a) && is_numeric($b) )
     {
-        return $a % $b . PHP_EOL;
+        return ($a % $b) . PHP_EOL;
     }//end of error check
     else
     {

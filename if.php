@@ -56,17 +56,17 @@ if ($b === $c)
     // output the appropriate result
     echo "$b is identical to $c\n";
 } //end of identical
-elseif ($b == $c) 
+elseif ($b == $c)
 {
     // output the appropriate result
     echo "$b is equal (thanks PHP) to $c\n";
 }//end of equal
-elseif ($b !== $c) 
+elseif ($b !== $c)
 {
     // output the appropriate result
     echo "$b is not identical to $c\n";
 } //end of not identical
-else 
+else
 {
     // output the appropriate result
     echo "$b is not equal to $c\n";

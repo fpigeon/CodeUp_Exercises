@@ -37,7 +37,6 @@ if ($b >= $c) {
     // output the appropriate result
     echo "$b is greater than or equal to $c\n";
 } //end if
-
 else {
     // output the appropriate result
     echo "$b is less than or equal to $c\n";
@@ -52,17 +51,14 @@ if ($b === $c) {
     // output the appropriate result
     echo "$b is identical to $c\n";
 } //end of identical
-
 elseif ($b == $c) {
     // output the appropriate result
     echo "$b is equal (thanks PHP) to $c\n";
 }//end of equal
-
 elseif ($b !== $c) {
     // output the appropriate result
     echo "$b is not identical to $c\n";
 } //end of not identical
-
 else {
     // output the appropriate result
     echo "$b is not equal to $c\n";

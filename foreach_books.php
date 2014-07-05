@@ -42,10 +42,10 @@ foreach ($books as $key => $book) {
 		echo 'The book\'s title is ' . $key . PHP_EOL;
 	
 		foreach ($book as $key2 => $bookInfo) {
-			echo "$key2 $bookInfo\n";
+			echo "$key2: $bookInfo\n";
 		}//end of $book foreach
 		//new line after book
-		echo '' . PHP_EOL;
+		echo PHP_EOL;
 	} // end of books after 1950
 		
 }//end of $books foreach

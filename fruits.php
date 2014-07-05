@@ -20,38 +20,30 @@ print out using a forEach loop
 
 //variables
 $fruits = [
-    'apple' =>
-        ['color' => 'red'],
-    
-    'banana' =>
-        ['color' => 'yellow'],
-
-    'carrot' =>
-        ['color' => 'orange'],
-    
-    'grape' =>
-        ['color' => 'purple'],
-    
-    'kiwi' =>
-        ['color' => 'green']
+    'apple' => [
+        'color' => 'red'
+    ],
+    'banana' => [
+        'color' => 'yellow'
+    ],
+    'carrot' => [
+        'color' => 'orange'
+    ],
+    'grape' => [
+        'color' => 'purple'
+    ],
+    'kiwi' => [
+        'color' => 'green'
+    ]
 ];//end of fruits array
 
-//as a for loop
-for ($i = 0; $i < count($fruits); $i++) {
-    $fruit = $fruits[$i];
-    echo "The fruit's name is $fruit\n";
-}//end of for loop
-
-echo '' . PHP_EOL;
-echo 'End of For Loop' . PHP_EOL;
-echo '' . PHP_EOL;
-
-
 //loop through all fruits
-foreach ($fruits as $key => $fruit) {
+foreach ($fruits as $key => $fruit)
+{
 	echo 'The fruit\'s name is ' . $key . PHP_EOL;
 
-	foreach ($fruit as $key => $fruitInfo) {
+	foreach ($fruit as $key => $fruitInfo)
+    {
 		echo "and the $key is $fruitInfo\n";
 	}//end of $fruit foreach
 	

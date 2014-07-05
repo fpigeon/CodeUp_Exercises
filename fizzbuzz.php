@@ -10,27 +10,30 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 //constants
 define('MIN', 1);
 define('MAX', 100);
-define('multThree', 'Fizz');
-define('MultFive', 'Buzz');
-define('MultFifteen', 'FizzBuzz');
+define('MULTIPLE_THREE', 'Fizz');
+define('MULTIPLE_FIVE', 'Buzz');
+define('MULTIPLE_FIFTEEN', 'FizzBuzz');
 
 //for loop
-for ($index = MIN; $index <= MAX; $index++){
-	$divBy3 = $index % 3 == 0;
-	$divBy5 = $index % 5 == 0;
-	$divBy15 = $index % 15 == 0;
+for ($index = MIN; $index <= MAX; $index++)
+{
+	$divisibleBy3 = $index % 3 == 0;
+	$divisibleBy5 = $index % 5 == 0;
 
-	if ($index == $divBy15){
-		echo MultFifteen . PHP_EOL;
+	if ($divisibleBy3 && $divisibleBy5)
+	{
+		echo MULTIPLE_FIFTEEN . PHP_EOL;
 	} //end of FizzBuzz
-	elseif ($index == $divBy3) {
-		echo multThree . PHP_EOL;
+	elseif ($divisibleBy3)
+	{
+		echo MULTIPLE_THREE . PHP_EOL;
 	} //end of Fizz
-	elseif ($index == $divBy5) {
-		echo MultFive . PHP_EOL;
+	elseif ($divisibleBy5)
+	{
+		echo MULTIPLE_FIVE . PHP_EOL;
 	}//end of Buzz
-	else{
-		echo ($index .  PHP_EOL);	
+	else
+	{
+		echo ($index .  PHP_EOL);
 	}//no flags
-	
 }//end of for loop

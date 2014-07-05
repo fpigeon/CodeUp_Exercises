@@ -19,71 +19,90 @@ Step 3
 11. Validate divide by 0 errors, return FALSE if divide by 0 is attempted.
 */
 
-function error ($a, $b, $error_code){
-	if($error_code === 1){
-		return  "$a and/or $b are not numbers\n";
-	}//end of error 1
-	else {
-		//return "$a is not divisble by zero\n";
-		return FALSE;
-	} // end error 2
+function error($a, $b, $error_code)
+{
+    if ($error_code === 1)
+    {
+        return  "$a and/or $b are not numbers\n";
+    }//end of error 1
+    else
+    {
+        //return "$a is not divisble by zero\n";
+        return FALSE;
+    } // end error 2
 } // end of error code
 
-function add($a, $b) {
-	//error check
-	if(is_numeric($a) && is_numeric($b) ){
-		return $a + $b . PHP_EOL;
-	}//end of error check
-	else{
-		return error($a, $b, 1);
-	} //default error message
-    
+function add($a, $b)
+{
+    //error check
+    if (is_numeric($a) && is_numeric($b) )
+    {
+        return $a + $b . PHP_EOL;
+    }//end of error check
+    else
+    {
+        return error($a, $b, 1);
+    } //default error message
+
 } // end of add
 
-function subtract($a, $b) {
-//error check
-	if(is_numeric($a) && is_numeric($b) ){
-		return $a - $b . PHP_EOL;
-	}//end of error check
-	else{
-		return error($a, $b, 1);
-	} //default error message} 
+function subtract($a, $b)
+{
+    //error check
+    if (is_numeric($a) && is_numeric($b) )
+    {
+        return $a - $b . PHP_EOL;
+    }//end of error check
+    else
+    {
+        return error ($a, $b, 1);
+    } //default error message}
 } // end of subtract
 
-function multiply($a, $b) {
- //error check
-	if(is_numeric($a) && is_numeric($b) ){
-		return $a * $b . PHP_EOL;
-	}//end of error check
-	else{
-		return error($a, $b, 1);
-	} //default error message
+function multiply($a, $b)
+{
+    //error check
+    if (is_numeric($a) && is_numeric($b) )
+    {
+        return $a * $b . PHP_EOL;
+    }//end of error check
+    else
+    {
+        return error($a, $b, 1);
+    } //default error message
 } //end of multiply
 
-function divide($a, $b) {
+function divide($a, $b)
+ {
     //error check
-	if(is_numeric($a) && is_numeric($b) ){
-		if ($b === 0){
-			return error($a, $b, 999);
-		} //check for div by 0
-		else {
-			return $a / $b . PHP_EOL;
-		} //ok to divide
-		
-	}//end of error check
-	else{
-		return error($a, $b, 1);
-	} //default error message
+    if (is_numeric($a) && is_numeric($b) ) {
+        if ($b === 0)
+        {
+            return error($a, $b, 999);
+        } //check for div by 0
+        else
+        {
+            return $a / $b . PHP_EOL;
+        } //ok to divide
+
+    }//end of error check
+    else
+    {
+        return error($a, $b, 1);
+    } //default error message
 } // end of divide
 
-function mod($a, $b) {
+function mod($a, $b)
+{
     //error check
-	if(is_numeric($a) && is_numeric($b) ){
-		return $a % $b . PHP_EOL;
-	}//end of error check
-	else{
-		return error($a, $b, 1);
-	} //default error message
+    if (is_numeric($a) && is_numeric($b) )
+    {
+        return $a % $b . PHP_EOL;
+    }//end of error check
+    else
+    {
+        return error($a, $b, 1);
+    } //default error message
 } // end of mod
 
 //function calls

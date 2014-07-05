@@ -20,22 +20,21 @@ Hints:
 - If you get stuck in game, ctrl-c will exit.
 */
 
-//killswitch
-//If there are 2 arguments passed, and both are numbers,
-// use the numbers to set the min and max on the random number generator.
+//too few arguments
 if ($argc < 3)
 {
     echo 'Please enter two integers for min and max' . PHP_EOL;
     exit(1);
-} //too few arguments
+}
+//not entering integers
 elseif (!is_numeric($argv[1]) || !is_numeric($argv[2]) )
 {
     echo "Please enter two numbers\n";
     exit(2);
-}//not entering integers
+}
 else
 {
-    //constants    
+    //constants
     define ('MIN', $argv[1]); //first argument
     define ('MAX', $argv[2]); //second argument
     define ('LOW_OUTOUT', 'HIGHER');
@@ -43,30 +42,30 @@ else
     define ('CORRECT', 'GOOD GUESS!');
 
     //variables
-    $guess_count = 1; //initiailize the number of guesses
+    $guess_count = 1; //initialize the number of guesses
 
-    //create a random number    
+    //create a random number
     $random_number = mt_rand(MIN, MAX);
 
     //user input
     fwrite(STDOUT, 'Guess a number between ' . MIN . ' and ' . MAX . ': ');
-    $guess = (int) fgets (STDIN);
+    $guess = (int) fgets(STDIN);
 
     //loop until right guesss
-    while ( $guess != $random_number)
+    while ($guess != $random_number)
     {
         if ($guess < $random_number)
         {
-            fwrite(STDOUT, LOW_OUTOUT . PHP_EOL);   
+            fwrite(STDOUT, LOW_OUTOUT . PHP_EOL);
         } //end of less
-        elseif( $guess > $random_number)
+        elseif ($guess > $random_number)
         {
-            fwrite(STDOUT, HIGH_OUTPUT . PHP_EOL);  
+            fwrite(STDOUT, HIGH_OUTPUT . PHP_EOL);
         }//end of high
 
         //user input
         fwrite(STDOUT, 'Guess a number between ' . MIN . ' and ' . MAX . ': ');
-        $guess = (int) fgets (STDIN);
+        $guess = (int) fgets(STDIN);
         $guess_count++; //increment guess count
     } //end of while
 

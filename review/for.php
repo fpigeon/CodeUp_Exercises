@@ -15,6 +15,10 @@ echo 'Enter an ending number: ';
 $end = trim(fgets(STDIN));
 echo 'Enter an incrementor: ';
 $incrementor = trim(fgets(STDIN));
+if (empty($incrementor))
+{
+    $incrementor = 1;
+}
 
 if (!is_numeric($start) || !is_numeric($end) || !is_numeric($incrementor))
 {

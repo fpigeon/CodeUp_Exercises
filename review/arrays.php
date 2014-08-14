@@ -13,11 +13,24 @@ print_r($numbers2);
 
 echo 'Index 3 is ' . $numbers[3] . PHP_EOL;
 
-$person = [
+$person1 = [
 	'first_name' => 'Frank',
 	'last_name' => 'Pigeon',
 	'email' => 'frank.pigeonjr@gmail.com',
 	'phone' => '210-704-7443'
 ];
-print_r($person);
+$person2 = [
+	'first_name' => 'Johnny',
+	'last_name' => 'Helper',
+	'email' => 'jh@gmail.com',
+	'phone' => '210-123-4567'
+];
+$person3 = [
+	'first_name' => 'Suzy',
+	'last_name' => 'Helper',
+	'email' => 'sz@gmail.com',
+	'phone' => '210-789-1234'
+];
+$test = [$person1, $person2, $person3];
+print_r($test);
  ?>

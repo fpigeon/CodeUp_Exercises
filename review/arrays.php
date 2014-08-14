@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Create an array of numbers, 1-5, using array(), and assign it to a variable. Now var_dump() your variable. Now print_r() your variable.
 // Repeat #1 using square brackets [] instead of array().
 // Echo the element with the index of 3 from your array. The value should be 4. Do you see how array indices work?
@@ -7,4 +7,17 @@
 
 $numbers = array(1, 2, 3, 4, 5);
 print_r($numbers);
+
+$numbers2 = [1, 2, 3, 4, 5];
+print_r($numbers2);
+
+echo 'Index 3 is ' . $numbers[3] . PHP_EOL;
+
+$person = [
+	'first_name' => 'Frank',
+	'last_name' => 'Pigeon',
+	'email' => 'frank.pigeonjr@gmail.com',
+	'phone' => '210-704-7443'
+];
+print_r($person);
  ?>

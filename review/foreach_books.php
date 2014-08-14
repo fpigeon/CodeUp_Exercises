@@ -30,12 +30,17 @@ $books = array(
 
 foreach ($books as $title => $book)
 {
-	echo 'Book Name: ' . $title . PHP_EOL;
-	foreach ($book as $book_field => $book_value)
-	{
-		echo $book_field . ': ' . $book_value . PHP_EOL;
-	}
-	echo '---------------------'. PHP_EOL;
+    //only book after 1950
+    if ($book['published'] > 1950)
+    {
+        echo 'Book Name: ' . $title . PHP_EOL;
+        foreach ($book as $book_field => $book_value)
+        {
+            echo $book_field . ': ' . $book_value . PHP_EOL;
+        }
+        echo '---------------------'. PHP_EOL;
+    }
+
 }
 
  ?>

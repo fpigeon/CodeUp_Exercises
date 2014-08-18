@@ -28,12 +28,12 @@ do {
     $input = trim(fgets(STDIN));
 
     // Check for actionable input
-    if ($input == 'N') {
+    if ($input == 'N' || $input == 'n') {
         // Ask for entry
         echo 'Enter item: ';
         // Add entry to list array
         $items[] = trim(fgets(STDIN));
-    } elseif ($input == 'R') {
+    } elseif ($input == 'R' || $input == 'r') {
         // Remove which item?
         echo 'Enter item number to remove: ';
         // Get array key
@@ -42,7 +42,7 @@ do {
         unset($items[$key]);
     }
 // Exit when input is (Q)uit
-} while ($input != 'Q');
+} while ($input != 'Q' && $input != 'q');
 
 // Say Goodbye!
 echo "Goodbye!\n";

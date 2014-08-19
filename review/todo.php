@@ -65,9 +65,20 @@ do {
     // Check for actionable input
     if ($input == 'N') {
         // Ask for entry
+        echo '(B)eginning or (E)nd: ';
+        $location = get_input(fgets(STDIN), TRUE);
+
         echo 'Enter item: ';
+        $new_todo = get_input(fgets(STDIN));
+
+        if ($location =='B') {
+            array_unshift($items, $new_todo);
+        }
+        else{
+            array_push($items, $new_todo);
+        }
         // Add entry to list array
-        $items[] = get_input(fgets(STDIN));
+        //OLD $items[] = get_input(fgets(STDIN));
     } elseif ($input == 'R') {
         // Remove which item?
         echo 'Enter item number to remove: ';
@@ -81,6 +92,10 @@ do {
             $sort_option = get_input(fgets(STDIN), TRUE);
         } while ($sort_option != 'A' && $sort_option != 'Z' && $sort_option != 'O' && $sort_option != 'R');
         sort_menu($sort_option, $items);
+    } elseif ($input == 'F'){
+        array_shift($items);
+    } elseif ($input == 'L'){
+        array_pop($items);
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');

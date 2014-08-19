@@ -27,15 +27,28 @@ Update the program to start numbering the list with 1 instead of 0. Make sure re
  // and convert to uppercase if $upper is true
  function get_input($input, $upper = FALSE)
  {
-     // Return filtered STDIN input
-    if ($upper)
-    {
+    // Return filtered STDIN input
+    if ($upper) {
         $input = strtoupper($input);
     }
 
     return $input = trim($input);
  }
-
+function sort_menu ($sort_option, &$array)
+{
+    if ($sort_option == 'A'){
+        asort($array);
+    }
+    elseif ($sort_option == 'Z') {
+        arsort($array);
+    }
+    elseif ($sort_option == 'O') {
+        ksort($array);
+    }
+    else {
+        krsort($array);
+    }
+}
 
 $items = array();
 
@@ -43,7 +56,7 @@ $items = array();
 do {
     echo list_items($items);
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (S)ort, (Q)uit : ';
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
@@ -62,6 +75,12 @@ do {
         $key = trim(fgets(STDIN));
         // Remove from array
         unset($items[$key - 1]);
+    } elseif ($input == 'S') {
+        do {
+            echo "(A)-Z, (Z)-A, (O)rder entered, (R)everse order entered: ";
+            $sort_option = get_input(fgets(STDIN), TRUE);
+        } while ($sort_option != 'A' && $sort_option != 'Z' && $sort_option != 'O' && $sort_option != 'R');
+        sort_menu($sort_option, $items);
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');

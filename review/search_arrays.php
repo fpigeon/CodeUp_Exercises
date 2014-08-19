@@ -1,12 +1,22 @@
 <?php
-function search($needle, $haystack){
-    $result = array_search($needle, $haystack);
-    if ($result == false){
-        return false;
+function search($needle, $haystack) {
+    if (array_search($needle, $haystack) !== FALSE) {
+        $is_found = TRUE;
     }
     else {
-        return true;
+        $is_found = FALSE;
     }
+    return $is_found;
+}
+
+function common_array_counter($array1, $array2) {
+    $common_count = 0;
+    foreach ($array1 as $value) {
+        if ( search($value, $array2) ) {
+            $common_count++;
+        }
+    }
+    return $common_count;
 }
 
 // first names
@@ -15,5 +25,5 @@ $names = ['Tina', 'Dana', 'Mike', 'Amy', 'Adam'];
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
 //function call
-$search_result = search('Adam', $names);
-var_dump($search_result);
+$count = common_array_counter($compare, $names);
+echo 'The number of common values in the two arrays is ' . $count . PHP_EOL;

@@ -56,7 +56,8 @@ $items = array();
 do {
     echo list_items($items);
     // Show the menu options
-    echo '(O)pen, (N)ew item, (R)emove item, (S)ort, (Q)uit : ';
+    echo '--------------------' . PHP_EOL;
+    echo '(O)pen, (N)ew item, (R)emove item, (S)ort, s(A)ve, (Q)uit : ';
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
@@ -99,12 +100,26 @@ do {
     } elseif ($input == 'O') {
         $filename = 'data/list.txt';
         $handle = fopen($filename, "r");
-        $contents = fread($handle, filesize($filename));
+        $contents = trim(fread($handle, filesize($filename)));
         $contents_array = explode("\n", $contents);
         fclose($handle);
 
         //add to todo list
         $items = array_merge($items, $contents_array);
+    } elseif ($input == 'A') {
+        $filename = 'data/list.txt';
+        if(file_exists($filename)) {
+            echo 'File exists. Do you want to overwrite? (Y)es or (N)o: ';
+            $overwrite = get_input(fgets(STDIN));
+            if($overwrite == 'Y') {
+                $handle = fopen($filename, 'w');
+                foreach ($items as $item) {
+                    fwrite($handle, $item . PHP_EOL);
+                }
+                fclose($handle);
+                echo 'File was saved succesfully!' . PHP_EOL;
+            }
+        }
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');

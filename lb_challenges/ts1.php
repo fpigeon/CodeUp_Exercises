@@ -10,6 +10,34 @@ not. A sampling of values and their expected results is listed below.
 
 class Webpage {
 	private $myUrl;
-	public function showHighlight($requestedUrl) {
+	protected $landingPage = 'index.html';
+	function __construct($myUrl)
+	{
+		$this->setUrl($myUrl);
+	}
+	private function setUrl($myUrl)
+	{
+		if (is_string($myUrl))
+		{
+			//trim all leading and whitespace
+			$this->myUrl = trim($myUrl);
+		}
+	}
+	public function showHighlight($requestedUrl)
+	{
+		if($requestedUrl == $this->myUrl)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
 	}
 }
+//Return true if $requestedUrl is the same as $myUrl
+$newWebPage = new Webpage('/section/index.html');
+echo ($newWebPage->showHighlight('/section/index.html') ? 'true' : 'false') . PHP_EOL;
+
+//Return true if $requestedUrl is located in the same section as $myUrl, but only if $myUrl is a landing page.

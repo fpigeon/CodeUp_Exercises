@@ -10,7 +10,7 @@ not. A sampling of values and their expected results is listed below.
 
 class Webpage {
 	private $myUrl;
-	protected $landingPage = 'index.html';
+	private $landingPage = 'index.html';
 	function __construct($myUrl)
 	{
 		$this->setUrl($myUrl);
@@ -23,9 +23,11 @@ class Webpage {
 			$this->myUrl = trim($myUrl);
 		}
 	}
-	public function showHighlight($requestedUrl)
+	protected function isLandingPage($myUrl)
 	{
-		if($requestedUrl == $this->myUrl)
+		//get the last 10 of $myUrl to compare with $landingPage
+		$file = substr($myUrl, -10);
+		if ($file == $this->landingPage)
 		{
 			return true;
 		}
@@ -33,11 +35,29 @@ class Webpage {
 		{
 			return false;
 		}
+	}
+	public function showHighlight($requestedUrl)
+	{
+		$dir1 = dirname($this->myUrl);
+		$dir2 = dirname($requestedUrl);
+		$file1_array = explode('/', $dir1);
+		$file2_array = explode('/', $dir2);
 
+		if($requestedUrl == $this->myUrl)
+		{
+			return true;
+		}
+		//Return true if $requestedUrl is located in the same section as $myUrl, but only if $myUrl is a landing page.
+		elseif ( ($file1_array[1] == $file2_array[1]) && $this->isLandingPage($this->myUrl))
+		{
+			return true;
+
+		}
+		else
+		{
+			return false;
+		}
 	}
 }
-//Return true if $requestedUrl is the same as $myUrl
 $newWebPage = new Webpage('/section/index.html');
-echo ($newWebPage->showHighlight('/section/index.html') ? 'true' : 'false') . PHP_EOL;
-
-//Return true if $requestedUrl is located in the same section as $myUrl, but only if $myUrl is a landing page.
+echo ($newWebPage->showHighlight('/section/subsection/page.html') ? 'true' : 'false') . PHP_EOL;

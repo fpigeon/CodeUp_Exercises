@@ -73,17 +73,17 @@ class Webpage {
 	}
 }
 // test 1 true
-$newWebPage = new Webpage('/section/index.html');
-echo ($newWebPage->showHighlight('/section/page.html') ? 'true' : 'false') . PHP_EOL;
+$newWebPage1 = new Webpage('/section/index.html');
+echo ($newWebPage1->showHighlight('/section/page.html') ? 'true' : 'false') . PHP_EOL;
 // test 2 false
-$newWebPage = new Webpage('/section/page.html');
-echo ($newWebPage->showHighlight('/section/other-page.html') ? 'true' : 'false') . PHP_EOL;
+$newWebPage2 = new Webpage('/section/page.html');
+echo ($newWebPage2->showHighlight('/section/other-page.html') ? 'true' : 'false') . PHP_EOL;
 // test 3 true
-$newWebPage = new Webpage('/section/index.html');
-echo ($newWebPage->showHighlight('/section/subsection/index.html') ? 'true' : 'false') . PHP_EOL;
+$newWebPage3 = new Webpage('/section/index.html');
+echo ($newWebPage3->showHighlight('/section/subsection/index.html') ? 'true' : 'false') . PHP_EOL;
 // test 4 true
-$newWebPage = new Webpage('/section/index.html');
-echo ($newWebPage->showHighlight('/section/subsection/page.html') ? 'true' : 'false') . PHP_EOL;
+$newWebPage4 = new Webpage('/section/index.html');
+echo ($newWebPage4->showHighlight('/section/subsection/page.html') ? 'true' : 'false') . PHP_EOL;
 // test 5 false
-$newWebPage = new Webpage('/section/subsection/index.html');
-echo ($newWebPage->showHighlight('/section/other/index.html') ? 'true' : 'false') . PHP_EOL;
+$newWebPage5 = new Webpage('/section/subsection/index.html');
+echo ($newWebPage5->showHighlight('/section/other/index.html') ? 'true' : 'false') . PHP_EOL;

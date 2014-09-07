@@ -38,17 +38,30 @@ class Webpage {
 	}
 	public function showHighlight($requestedUrl)
 	{
+		//variables
 		$dir1 = dirname($this->myUrl);
 		$dir2 = dirname($requestedUrl);
 		$file1_array = explode('/', $dir1);
 		$file2_array = explode('/', $dir2);
 
-		if($requestedUrl == $this->myUrl)
+		//determine if both URLs are in the same section
+		foreach ($file1_array as $f1)
+		{
+			$match = false;
+		 	foreach ($file2_array as $f2)
+		 	{
+		    	if ($f1 == $f2)
+		     	$match = true;
+		 	}
+		}
+		//Return true if $requestedUrl is the same as $myUrl
+		if ($requestedUrl == $this->myUrl)
 		{
 			return true;
 		}
 		//Return true if $requestedUrl is located in the same section as $myUrl, but only if $myUrl is a landing page.
-		elseif ( ($file1_array[1] == $file2_array[1]) && $this->isLandingPage($this->myUrl))
+		//Return true if $myUrl is the landing page of a parent section to $requestedUrl.
+		elseif (($match == true) && $this->isLandingPage($this->myUrl))
 		{
 			return true;
 
@@ -59,5 +72,18 @@ class Webpage {
 		}
 	}
 }
+// test 1 true
+$newWebPage = new Webpage('/section/index.html');
+echo ($newWebPage->showHighlight('/section/page.html') ? 'true' : 'false') . PHP_EOL;
+// test 2 false
+$newWebPage = new Webpage('/section/page.html');
+echo ($newWebPage->showHighlight('/section/other-page.html') ? 'true' : 'false') . PHP_EOL;
+// test 3 true
+$newWebPage = new Webpage('/section/index.html');
+echo ($newWebPage->showHighlight('/section/subsection/index.html') ? 'true' : 'false') . PHP_EOL;
+// test 4 true
 $newWebPage = new Webpage('/section/index.html');
 echo ($newWebPage->showHighlight('/section/subsection/page.html') ? 'true' : 'false') . PHP_EOL;
+// test 5 false
+$newWebPage = new Webpage('/section/subsection/index.html');
+echo ($newWebPage->showHighlight('/section/other/index.html') ? 'true' : 'false') . PHP_EOL;
